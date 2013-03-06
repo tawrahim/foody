@@ -6,6 +6,7 @@ the ruby language. OMG! it is heavily commented. Hope you enjoy!
 ## Installation
 ```bash
 $ bash < <(curl --silent https://raw.github.com/tawrahim/foody/master/install.sh)
+$ cd ~/foody
 ```
 
 ## Philosophy
