@@ -11,9 +11,7 @@ cd ~
 git clone git://github.com/tawrahim/foody.git
 cd foody
 
-echo "To start the application simply type 'ruby init.rb'"
+echo "To start the application simply type  navigate to typed 'cd ~/foody'"
+echo " Type 'ruby init.rb' to launch the app" 
 echo "To view documentation for the project type 'yard server'"
 echo "Hope you find it fancy...ha!"
-echo "This is an alias for the foody-ruby project. Helps with seamless install"
-echo alias foody="cd ~/foody" >> ~/.bashrc
-cd ~/foody
