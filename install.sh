@@ -15,4 +15,4 @@ echo "To start the application simply type  navigate to typed 'cd ~/foody'"
 echo " Type 'ruby init.rb' to launch the app" 
 echo "To view documentation for the project type 'yard server'"
 echo "Hope you find it fancy...ha!"
-cd ~foody
+cd ~/foody
