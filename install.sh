@@ -14,4 +14,4 @@ cd foody
 echo "To start the application simply type 'ruby init.rb'"
 echo "To view documentation for the project type 'yard server'"
 echo "Hope you find it fancy...ha!"
-CDPATH=:$HOME/foody
+alias proj="cd /home/foody"
