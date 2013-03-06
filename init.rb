@@ -17,5 +17,9 @@ $:.unshift(File.join(APP_ROOT, 'lib'))
 # we want to require 'guide' since it contains the guide info
 require 'guide'
 
-
-
+# Here we create an object to make reference to the guide class
+# and then call the launch method in our Guide class
+# Remember that the guide method is launch method is going to take it
+# from there
+guide = Guide.new('restaurant.txt')
+guide.launch!

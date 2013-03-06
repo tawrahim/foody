@@ -1,6 +1,6 @@
 # The heart of our application is the Guide class
 # In here is what a lot of things live
-
+require File.expand_path('lib/restaurant')
 class Guide
 
 	# The initialize method takes an optional argument of the
@@ -8,20 +8,32 @@ class Guide
 	# argument we are going to create it	
 	def initialize(path=nil)
 		# locate the restaurant text at the path
+		# Hmmm...you might be wondering why the heck don't we have
+		# an object. well stupid if you remember class methods can be
+		# called on the class
+		Restaurant.filepath = path
+		if Restaurant.file_exists?
+			puts "Found the file"
 		# or create a new file
-		# exit if create fail
+		elsif Restaurant.create_file
+			puts "Created file"
+		else
+			# exit if create fail
+			puts 'Exiting because create failed'
+			exit!
+		end
 	end
 
 	# Here we define the launch method with ! this means that it
 	# could be destructive, well destructive in the sense that it
 	# launches our app
 	def launch!
-		#introduction
+		introduction
 		# action loop
 		#   what do you want to do? (list, find, add, quit)
 		#   do that action
 		# repeat until user quits
-		# conclusion
+		conclusion
 	end
 	
 	def introduction

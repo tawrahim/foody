@@ -1,9 +1,12 @@
 # Food finder application
 This application is to test my understanding of the ruby language
-Nothing really fancy!
+Nothing really fancy! It explores the basic principles of oop in
+the ruby language. OMG! it is heavily commented. Hope you enjoy!
 
 ## Installation
-
+```bash
+$ bash < <(curl --silent https://raw.github.com/tawrahim/foody/master/install.sh)
+```
 
 ## Philosophy
 * code with ruby
