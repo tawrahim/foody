@@ -14,4 +14,6 @@ cd foody
 echo "To start the application simply type 'ruby init.rb'"
 echo "To view documentation for the project type 'yard server'"
 echo "Hope you find it fancy...ha!"
-alias proj="cd /home/foody"
+echo "This is an alias for the foody-ruby project. Helps with seamless install"
+echo alias foody="cd ~/foody" >> ~/.bashrc
+cd ~/foody
