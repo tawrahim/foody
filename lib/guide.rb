@@ -34,25 +34,25 @@ class Guide
 	# launches our app
 	def launch!
 		introduction
-			result = nil
-			until result == :quit
+			action = nil
+			until action == :quit
 			# action loop
 			#   what do you want to do? (list, find, add, quit)
 			print "> "
-			user_response = gets.downcase.strip!
+			user_response = gets.downcase.strip!.split(' ')
 			#   do that action
-			result = do_action(user_response)
-			# repeat until user quits
+			action,args = do_action(user_response[0],user_response[1])
 		end
 		conclusion
 	end
 	
-	def do_action(action)
+	def do_action(action,args="")
 		case action
 		when 'list'
 			list
 		when 'find'
-			puts 'finding'
+			keyword = args
+			find(keyword)
 		when 'add'
 			addy
 		when 'quit'
@@ -62,6 +62,25 @@ class Guide
 		end
 	end
 	
+	def find(keyword="")
+		puts "Find a restaurant"
+		if keyword
+			#search
+			restaurants = Restaurant.saved_restaurants
+			puts restaurants.name.inspect
+			found = restaurants.select do |rest|
+				 puts rest.name.downcase.include?(keyword.downcase).inspect
+				 # rich = rest.cuisine.downcase.include?(keyword.downcase)
+				# rest.price.to_i <= keyword.to_i
+			end
+			
+		else
+			puts "Find using a keyword phrase to search the restaurant menu"
+			puts "Example: 'find tamale"
+
+		end
+	end
+
 	# command for listing 
 	def list
 		puts "\n Listing restaurants\n\n"
@@ -71,7 +90,7 @@ class Guide
 		end
 
 	end
-	# command for add to file	
+	# command for add to file
 	def addy 
 		restaurant = Restaurant.build_using_questions
 		if restaurant.save 
