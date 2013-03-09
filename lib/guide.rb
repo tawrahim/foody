@@ -79,6 +79,7 @@ class Guide
 			puts "Example: 'find tamale"
 
 		end
+
 	end
 
 	# command for listing 
